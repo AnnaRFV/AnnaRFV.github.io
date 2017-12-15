@@ -1,0 +1,974 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KOMPIKI</title>
+	<link rel="shortcut icon" href="img/favico.png"/>
+	<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+	<!-- бутстрап для велосити -->
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css'>
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff">
+	<link rel="stylesheet" type="text/css" href="fonts/glyphicons-halflings-regular.woff2">
+
+	<!-- ссылки плагинов для слайдера -->
+    <link rel="stylesheet" type="text/css" href="css/carousel-style.css">
+		<link rel="stylesheet" type="text/css" href="css/dec.css">
+    <link rel="stylesheet" href="js/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="js/owl-carousel/owl.theme.default.min.css">
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script src="js/jquery.maskedinput.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+
+	<!-- была эта библиотека
+	<script src="js/bootstrap.min.js"></script>-->
+
+	<script type="text/javascript">
+	jQuery(function($){
+	$("#zakaznumber").mask("+375 (99) 999-99-99");
+	$("#findnumber").mask("+375 (99) 999-99-99");
+	$("#ordernumber").mask("+375 (99) 999-99-99");
+	});
+	</script>
+
+  	<script type="text/javascript">
+  	// скроллинг по нажатию на пункт меню
+		$(document).ready(function(){
+		    $(".navbar").on("click","a", function (event) {
+		        event.preventDefault();
+		        var id  = $(this).attr('href'),
+		            top = $(id).offset().top - 100;
+		        $('body,html').animate({scrollTop: top}, 1500);
+		    });
+
+		    $(".sub").on("click","a", function (event) {
+		        event.preventDefault();
+		        var id  = $(this).attr('href'),
+		            top = $(id).offset().top - 100;
+		        $('body,html').animate({scrollTop: top}, 1500);
+		    });
+
+		    $(".scroll-down").on("click","a", function (event) {
+		        event.preventDefault();
+		        var id  = $(this).attr('href'),
+		            top = $(id).offset().top - 100;
+		        $('body,html').animate({scrollTop: top}, 1500);
+		    });
+		});
+
+
+
+		function animEl() {
+            var arrowEl = $('#go-to-top');
+            arrowEl.toggleClass('animated fadeInUp');
+
+            var btnCommentEl = $('.submit-comment');
+            btnCommentEl.toggleClass('animated rubberBand');
+        }
+
+        function anim(){
+        	 var btnEl = $('.submit-quest');
+            btnEl.toggleClass('animated pulse');
+
+        }
+        setInterval(anim,3000);
+
+        setInterval(animEl, 2000);
+
+
+        //очищаем placeholder
+        $(document).ready(function () {
+            $('input,textarea').focus(function(){
+                $(this).data('placeholder',$(this).attr('placeholder'))
+                $(this).attr('placeholder','');
+            });
+            $('input,textarea').blur(function(){
+                $(this).attr('placeholder',$(this).data('placeholder'));
+            });
+        });
+
+  	</script>
+
+</head>
+
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#headerwrap"><img src="img/logo.png" alt="логотип"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#problems">Проблемы</a></li>
+					<li><a href="#advantages">Гарантия</a></li>
+					<li><a href="#about">О нас</a></li>
+					<li><a href="#services">Услуги</a></li>
+					<li><a href="#comments">Отзывы</a></li>
+					<li><a href="#share">Акции</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- HEADER -->
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h1>Компики - профессиональный взгляд на Вашу проблему!</h1>
+					<h2>Выполним чистку Вашего ноутбука<br>и замену термопасты в течение 2 часов.<br>Выезд и диагностика бесплатны (при отказе<br> от ремонта Вы также не платите ни рубля)</h2>
+				<input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать обратный звонок">
+			     </div>
+			</div>
+			<div class="scroll-down">
+				<a href="#problems" class="down hidden-xs hidden-xxs"><img src="img/arrow.png" alt="меню"></a>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- PROBLEMS -->
+	<div class="container" id="problems">
+		<img src="img/line.png" class="line-head img-responsive" alt="линия">
+
+		<h2 class="centered text-uppercase">Быстрое решение вашей проблемы</h2>
+		<p class="centered zag-problems">Обзор часто задаваемых клиентами вопросов</p>
+
+		<div class="panel-group" id="accordion">
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+		        Ноутбук не включается, просто черный экран</a>
+		      </h4>
+		    </div>
+		    <div id="collapse1" class="panel-collapse collapse">
+		      <div class="panel-body"> Бесплатная диагностика ноутбука. (ремонт от 20 рублей)
+                        <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+		        Ноутбук греется, шумит, сам безпричинно выключается</a>
+		      </h4>
+		    </div>
+		    <div id="collapse2" class="panel-collapse collapse">
+		      <div class="panel-body">Чистка кулера и замена термопасты. (39 рублей)
+                          <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+		        Windows на компьютере работает медленно, появляются ошибки</a>
+		      </h4>
+		    </div>
+		    <div id="collapse3" class="panel-collapse collapse">
+		      <div class="panel-body">Переустановка ОС Windows вместе с драйверами (39 рублей)
+                       <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+		        Ноутбук зависает, переустановка не помогает</a>
+		      </h4>
+		    </div>
+		    <div id="collapse4" class="panel-collapse collapse">
+		      <div class="panel-body">Бесплатная диагностика жёсткого диска (если необходим дальнейшиу ремонт, от 80 рублей)
+                         <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+		        Разбита матрица, на экране разводы/полосы</a>
+		      </h4>
+		    </div>
+		    <div id="collapse5" class="panel-collapse collapse">
+		      <div class="panel-body">Замена матрицы на новую или б/у (от 80 рублей)
+                        <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+		        Сломан корпус ноутбука или крышка</a>
+		      </h4>
+		    </div>
+		    <div id="collapse6" class="panel-collapse collapse">
+		      <div class="panel-body">Оценка стоимости ремонта корпуса (стоимость ремонта составит от 40 рублей)
+                        <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+		        Не работает зарядка, сломано гнездо питания</a>
+		      </h4>
+		    </div>
+		    <div id="collapse7" class="panel-collapse collapse">
+		      <div class="panel-body">Бесплатная диагностика питания на входе (дальнейшие работы по ремонту от 40 рублей)
+                         <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+		        Попала жидкость? Срочно достаньте батарею!</a>
+		      </h4>
+		    </div>
+		    <div id="collapse8" class="panel-collapse collapse">
+		      <div class="panel-body">Срочная чистка от залития (от 50 рублей)
+                        <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+		        Батарея не работает или держит заряд не долго</a>
+		      </h4>
+		    </div>
+		    <div id="collapse9" class="panel-collapse collapse">
+		      <div class="panel-body">Восстановление или замена батареи (от 80 рублей)
+                         <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать">
+                      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+
+
+	<!-- ADVANTAGES -->
+	<div class="container" id="advantages">
+		<img src="img/line.png" class="line-head img-responsive" alt="линия">
+
+		<h2 class="centered text-uppercase">Преимущества</h2>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-xxs-12 centered advant wow fadeInDown" data-wow-duration="1s">
+				<img src="img/advantages/1.svg" class="titl" alt="Заголовок">
+				<p>Отличная<br>гарантия</p>
+				<div class="sub-text-convert">
+					<p class="sub-text">Независимо от типа работ, клиенту выписывается гарантийный талон</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-xxs-12 centered advant wow fadeInDown" data-wow-duration="1.2s">
+				<img src="img/advantages/2.svg" class="titl" alt="заголовок">
+				<p>Экономия Вашего<br>бюджета</p>
+				<div class="sub-text-convert">
+					<p class="sub-text">Бесплатный выезд, бесплатная диагностика (возможна без последующего ремонта)</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-xxs-12 centered advant wow fadeInDown" data-wow-duration="1.4s">
+				<img src="img/advantages/3.svg" class="titl" alt="заголовок">
+				<p>Своевременное<br>выполнение</p>
+				<div class="sub-text-convert">
+					<p class="sub-text">Работа надлежащего качества согласно оговоренным срокам</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-xxs-12 centered advant wow fadeInDown" data-wow-duration="1.6s" data-wow-offset="200">
+				<img src="img/advantages/4.svg" class="titl" alt="заголовок">
+				<p>Профессиональный<br>ремонт</p>
+				<div class="sub-text-convert">
+					<p class="sub-text">Мастер отремонтировал уже более 1500 компьютеров</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- ABOUT -->
+	<div class="container" id="about">
+		<img src="img/line.png" class="line-head img-responsive" alt="линия">
+		<h2 class="centered text-uppercase">О компании</h2>
+
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xxs-12">
+				<div class="sub-text-convert">
+					<p class="sub-text ">Григорий Макария</p>
+				</div>
+				<p class="text-justify wow fadeInLeft" data-wow-duration="2s"> Григорий Макария осуществляет качественный ремонт компьютерной техники: ноутбуков, нетбуков, персональных компьютеров, мониторов, планшетов на профессиональном оборудовании европейского производства.
+					Григорий имеет большой опыт ремонта стационарных и портативных компьютеров, а также другой цифровой техники, имеет обширные технические знания в области радиотехники и всегда готов в короткий срок определить практически любую неисправность.
+				</p>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xxs-12 about-img">
+				<img src="img/aboutgr.jpg" class="img-responsive wow fadeInRight" data-wow-delay="1s" data-wow-duration="2s" alt="Григорий Макария">
+			</div>
+		</div>
+	</div>
+
+
+	<!-- SERVICES -->
+	<!--<div class="container" id="services">
+		<img src="img/line.png" class="line-head img-responsive" alt="линия">
+
+		<h2 class="centered text-uppercase">Наши услуги и цены</h2>
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+			<div id="contacts">
+					<div id="filter"> <p> Выберите категорию услуг: </p>
+					</div>
+				</div>
+				<table class="table table-striped" id="view">
+				<script id="contactTemplate" type="text/template">
+						<th><%= problem %> </th>
+						<th><%= price %> </th>
+						<th> <input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="<%= action %>">
+						</th>
+					</script>
+				</table>
+
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="stock  wow pulse"  data-wow-iteration="2" data-wow-duration="1.7s"  id="share">
+							<div class="stock-top">
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 centered">
+										<p class="text-uppercase" id="stock-header">Акция месяца</p>
+									</div>
+								</div>
+								<div class="row second-stock">
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<p class="text-justify stock-main-text"> Если мы не починим ваш ноутбук в течении одного дня, Вы получите полную чистку ноутбука абсолютно <b>БЕСПЛАТНО</b>. <span class="min"> В акции участвуют ноутбуки любой сложности ремонта.</span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row centered second-block">
+					<p class="zag">Не нашли интересующей Вас услуги?</p>
+					<p>Оставьте заявку и мастер свяжется с Вами<br>в течение 3 минут (в рабочее время)</p>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input class="second-block-input myInput" type="text" name="name" required pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" id="findname" placeholder="Введите Ваше имя">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input class="second-block-input myInput" type="text" name="phone" required pattern="(\+?\d[- .]*){7,13}" id="findnumber" placeholder="+ 375 (ХХ) ХХХ-ХХ-ХХ">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input type="button" name="submit" class="submit-quest" id="btn-find" value="Отправить">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<!-- SERVICES -->
+	<div class="container" id="services">
+		<img src="img/line.png" class="line-head img-responsive">
+
+		<h2 class="centered text-uppercase">Наши услуги и цены</h2>
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<th>Диагностика</th>
+							<th>бесплатно</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Выезд на дом</th>
+							<th>бесплатно</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Удаленная работа</th>
+							<th>бесплатно</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Лечение вирусов</th>
+							<th>20 BYN</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Переустановка ОС</th>
+							<th>20 BYN</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Замена матрицы</th>
+							<th>от 114 BYN</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Снятие забытого пароля</th>
+							<th>20 BYN</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Замена клавиатуры</th>
+							<th>от 60 BYN</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Насйтройка Wi-Fi</th>
+							<th>20 BYN</th>
+						<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Замена жесткого диска</th>
+							<th>от 80 BYN</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+						<tr>
+							<th>Чистка ноутбука</th>
+							<th>30 BYN</th>
+							<th><input type="button" name="order" class="order" data-toggle="modal" href="#zakaz" value="Заказать"></th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="stock" id="share">
+							<div class="stock-top">
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 centered">
+										<p class="text-uppercase" id="stock-header">Акция месяца</p>
+									</div>
+								</div>
+								<div class="row second-stock">
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<p class="text-justify stock-main-text"> Если мы не починим ваш ноутбук в течении одного дня, Вы получите полную чистку ноутбука абсолютно <b>БЕСПЛАТНО</b>. <span class="min"> В акции участвуют ноутбуки любой сложности ремонта.</span></p>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row centered second-block">
+					<p class="zag">Не нашли интересующей Вас услуги?</p>
+					<p>Оставьте заявку и мастер свяжется с Вами<br>в течение 3 минут (в рабочее время)</p>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input class="second-block-input myInput" type="text" name="name" required pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" id="findname" placeholder="Введите Ваше имя">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input class="second-block-input myInput" type="text" name="phone" required pattern="(\+?\d[- .]*){7,13}" id="findnumber" placeholder="+ 375 (ХХ) ХХХ-ХХ-ХХ">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input type="button" name="submit" class="submit-quest" id="btn-find" value="Отправить">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- велосити форма -->
+	<div id="zakaz" class="modal" data-easein="perspectiveDownIn"  tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel">Оформление заявки</h4>
+				</div>
+				<div class="modal-body message">
+					<h3>Заполните все поля</h3>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="form-zakaz">
+								<p>Ваше имя</p>
+								<input type="text" required pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" id="zakazname">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="form-zakaz form-zakaz-last">
+								<p>Ваш номер</p>
+								<input type="text" required pattern=".{5,}" id="zakaznumber">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="form-comment centered">
+								<input type="button" name="submit" value="Отправить комментарий" id="zakaz-btn">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- COMMENTS -->
+	<!-- слайдер -->
+	<div class="container-fluid" id="comments">
+
+			<img src="img/line.png" class="line-head img-responsive" alt="линия">
+
+			<h2 class="centered text-uppercase">Реальные отзывы</h2>
+
+            <div id="testimonials">
+                <div class="container-comments">
+                    <div class="block-one-example">
+                        <div class="owl-carousel block-items">
+                            <div class="item">
+                                <div class="inner-testimonial">
+                                    <img src="img/comments/1.jpg" class="animated bounceIn full-opacity img-circle" alt="Клиент 1">
+                                    <div class="convert-comment">
+                                    	<h3 class="city-name">Марат <br> Диагностика ПК </h3>
+                                    	<p class="text-testimonial text-justify">Хочу сказать большое спасибо компании Компики и выразить свою благодарность сотрудникам данного сервиса за внимательность к клиентам, культуру обслуживания, за правильную диагностику c выявлением причин поломки, приемлемые цены и скидки своим клиентам.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                            	<div class="inner-testimonial">
+                            		<img src="img/comments/2.jpg" class="img-circle" alt="Клиент 2">
+                            		<div class="convert-comment">
+                            			<h3 class="city-name">Ангелина <br> Ускорение работы (ОС) </h3>
+                            			<p class="text-testimonial text-justify">Обращалась до этого в два сервиса, помогли на пару дней. Я уже задумалфсь о новом ноутбуке, потому что ценю хорошую работу, тем более техники за сравнительно не малые деньги.
+                            				Компики мне помогли, сейчас уже как пол года всё летает, как бы не загружала ноутбук. Да ещё что порадоволо, недавно позвонили и спросили, "всё ли в порядке". А то так и забыл про них, проблемм с компом нет=))
+                            			</p>
+                            		</div>
+                            	</div>
+                            </div>
+                            <div class="item">
+                            	<div class="inner-testimonial">
+                            		<img src="img/comments/3.jpg" class="img-circle" alt="Клиент 3">
+                            		<div class="convert-comment">
+                            			<h3 class="city-name">Николай <br> Замена накопителя (HDD) </h3>
+                            			<p class="text-testimonial text-justify">Менял сломавшийся HDD на Lenovo Y580. В результате имею новый HDD и SSD для ОС. Все очень оперативно, за 4 часа, с чисткой и установкой ОС. Приятно удивлен ценой. Вообще, этот сервис выгодно отличается даже в мелочах. Очень рекомендую.</p>
+                            			</div>
+                            		</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+        		<div class="col-lg-12 col-md-12 col-sm-12 centered">
+					<input type="button" name="submit" class="submit-comment" value="Оставить отзыв" data-toggle="modal" data-target="#basicModal">
+				</div>
+            </div>
+        </div>
+
+
+
+		<div class="modal fade animated flipInY" id="basicModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header"><button class="close" type="button" data-dismiss="modal">x</button>
+						<h4 class="modal-title" id="myModalLabel1">Пожалуйста, оставьте комментарий</h4>
+					</div>
+					<div class="modal-body message">
+						<h3>Заполните все поля</h3>
+
+						<div class="row">
+			                <div class="col-xs-12 col-sm-12 col-md-12">
+			                    <div class="form-comment">
+			                    	<p>Ваше имя</p>
+			                        <input type="text" required pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" id="name">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="row">
+			                <div class="col-xs-12 col-sm-12 col-md-12">
+			                    <div class="form-comment">
+			                    	<p>Ваша проблема</p>
+			                        <input type="text" required pattern=".{5,}" id="problem">
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="row">
+			                <div class="col-xs-12 col-sm-12 col-md-12">
+			                    <div class="form-comment form-comment-last">
+			                   		<p>Ваш комментарий</p>
+			                        <textarea  rows="5" id="comment"></textarea>
+			                    </div>
+			                </div>
+			            </div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="form-comment centered">
+								<input type="button" name="submit" value="Отправить комментарий" id="comment-btn">
+							</div>
+						</div>
+					</div>
+
+<!-- 					<div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button>
+						<button class="btn btn-primary" type="button">Оставить комментарий</button>
+					</div> -->
+				</div>
+			</div>
+		</div>
+
+		<!-- MODAL THANKS -->
+        <div id="myModal" class="modal fade animated">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Заголовок модального окна -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Готово!</h4>
+                    </div>
+                    <!-- Основное содержимое модального окна -->
+                    <div class="modal-body">
+                        <p>Cпасибо за Ваш отзыв!<br>Благодаря ему качество нашей работы станет ещё лучше!</p>
+                        <p>С уважением, Kompiki</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="errorModal" class="modal fade animated">
+        	<div class="modal-dialog">
+        		<div class="modal-content">
+        			<!-- Заголовок модального окна -->
+        			<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        				<h4 class="modal-title">Ошибка!</h4>
+        			</div>
+        			<!-- Основное содержимое модального окна -->
+        			<div class="modal-body">
+        				<p>Заполните все поля валидными данными, пожалуйста! </p>
+        				<p>С уважением, Kompiki</p>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+
+
+
+    <!-- BUTTON-UP-TO -->
+    <a id="go-to-top" href="#home" class="btn-md btn-lg go-to-top" role="button" title="Вверх">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+
+
+	<!-- ISSUE -->
+	<div class="container-fluid" id="issue">
+		<div class="row centered">
+			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+				<img src="img/logom.png" alt="линия">
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+				<p class="zag-footer">Остались вопросы?</p>
+				<p>Заполните форму и мы перезвоним Вам</p>
+				<div class="row centered">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input class="second-block-input myInput" type="text" name="name" required pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" id="ordername" placeholder="Введите Ваше имя">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input class="second-block-input myInput" type="text" name="phone" required pattern="(\+?\d[- .]*){7,13}"  id="ordernumber" placeholder="+ 375 (ХХ) ХХХ-ХХ-ХХ">
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<input type="button" name="submit" class="submit-quest" id="btn-order" value="Отправить">
+					</div>
+				</div>
+				 <div id="orderModal" class="modal fade animated">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Заголовок модального окна -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Готово!</h4>
+                    </div>
+                    <!-- Основное содержимое модального окна -->
+                    <div class="modal-body">
+                        <p>Cпасибо за Вашу заявку!<br> Менеджер свяжется с Вами в течение 20 минут </p>
+                        <p>С уважением, Kompiki</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+				<div class="sub">
+					<a href="#problems">Проблемы</a>
+					<a href="#advantages">Гарантия</a>
+					<a href="#about">О нас</a>
+					<a href="#services">Услуги</a>
+					<a href="#comments">Отзывы</a>
+					<a href="#share">Акции</a>
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 time-block centered">
+					<div class="phone">
+						<img id="tel" src="img/icon/smartphone.png" alt="телефон">
+						<p class="numb_foot"> +375 (29) 834-75-49 <b>МТС</b> <br>
+						 +375 (44) 834-75-49 <b>Velcom</b> <br>
+						 +375 (25) 834-75-49 <b>Life</b>
+						 </p>
+					</div>
+
+					<div class="calendar">
+						<img id="time_icon" src="img/icon/calendar.png" alt="календарь">
+						<p id="time">пн.-вс.: 8.00 - 23.00</p>
+					</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<p class="foo-text">Срочный ремонт, чистка, диагностика компьютеров и ноутбуков, продажа и установка комплектующих, замена всех составляющих ПК в Минске с выездом мастера "Kompiki" © 2010 - 2017</p>
+				<center>
+				<div id="xml">
+					<?xml version="1.0"?>
+					<FIO>by Kozlovskaya Anna Maksimovna</FIO>
+          <FAC>Information Technology Faculty</FAC>
+					<SPEC>Design of Electronic and Web-Publications</SPEC>
+					<GR>10 group</GR>
+					<YEAR>2016</YEAR>
+				</div>
+			</center>
+				</div>
+		</div>
+	</div>
+
+
+    <!-- script for slide comments -->
+    <script src="js/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/owl-carousel/custom.js"></script>
+    <script src="js/json2.js"></script>
+    <script src="js/wow.min.js"></script>
+		 <script src="js/index.js"></script>
+    <script>
+    	new WOW().init();
+    </script>
+
+	<script type="text/javascript">
+		    //to top
+            $(document).ready(function() {
+                $(window).scroll(function() {
+                    // Высота проявления кнопки
+                    if ($(this).scrollTop() > 100) {
+                        $('#go-to-top').fadeIn();
+                    } else {
+                        $('#go-to-top').fadeOut();
+                    } });
+
+                $('#go-to-top').click(function() {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    // Скорость подъема
+                    }, 2000);
+                    return false;
+                });
+            });
+
+
+
+           // валидация для отправить отзыв
+            $('#comment-btn').on('click', function (event) {
+            	var text1=$("#name").val();
+            	var text2=$("#problem").val();
+            	var text3=$("#comment").val();
+            	var errors=0;
+            	if (text1==""){
+            		$("#name").css({"border":"1px solid red"});
+            		errors++;
+            	}
+            	if (text2==""){
+            		$("#problem").css({"border":"1px solid red"});
+            		errors++;
+            	}
+            	if (text3=="") {
+            		$("#comment").css({"border":"1px solid red"});
+            		errors++;
+            	}
+            	if(errors==0){
+            	var self = $("#myModal");
+            	var basicModal = $('#basicModal');
+            	self.modal('show');
+            	basicModal.modal('hide');
+            	setTimeout(function(){
+            		self.modal('hide');
+            	}, 3000);
+            	$("#name").val("");
+            	$("#problem").val("");
+            	$("#comment").val("");
+            	$("#name").css({"border":""});
+            	$("#problem").css({"border":""});
+            	$("#comment").css({"border":""});
+            }
+            	else {
+            		var self = $("#errorModal");
+            		self.modal('show');
+            		setTimeout(function(){
+            			self.modal('hide');
+            		}, 1500);
+            	}
+
+            });
+
+        	// обработчик, если остались вопросы в футере
+        	 $('#btn-order').on('click', function (event) {
+        	 	var text1=$("#ordername").val();
+            	var text2=$("#ordernumber").val();
+            	var errors=0;
+            	if (text1==""){
+            		$("#ordername").css({"border":"1px solid red"});
+            		errors++;
+            	}
+            	if (text2==""){
+            		$("#ordernumber").css({"border":"1px solid red"});
+            		errors++;
+            	}
+
+            	if(errors==0){
+            	var self = $("#orderModal");
+            	var basicModal = $('#basicModal');
+            	self.modal('show');
+            	basicModal.modal('hide');
+            	setTimeout(function(){
+            		self.modal('hide');
+            	}, 3000);
+            	$("#ordername").val("");
+            	$("#ordernumber").val("");
+            	$("#ordername").css({"border":""});
+            	$("#ordernumber").css({"border":""});
+            }
+            	else {
+            		var self = $("#errorModal");
+            		self.modal('show');
+            		setTimeout(function(){
+            			self.modal('hide');
+            		}, 1500);
+            	}
+        	 });
+
+        	 //обработчик, если не нашёл данных
+        	  	 $('#btn-find').on('click', function (event) {
+        	 	var text1=$("#findname").val();
+            	var text2=$("#findnumber").val();
+            	var errors=0;
+            	if (text1==""){
+            		$("#findname").css({"border":"1px solid red"});
+            		errors++;
+            	}
+            	if (text2==""){
+            		$("#findnumber").css({"border":"1px solid red"});
+            		errors++;
+            	}
+
+            	if(errors==0){
+            	var self = $("#orderModal");
+            	self.modal('show');
+            	setTimeout(function(){
+            		self.modal('hide');
+            	}, 10000);
+            	$("#findname").val("");
+            	$("#findnumber").val("");
+            	$("#findname").css({"border":""});
+            	$("#findnumber").css({"border":""});
+            }
+            	else {
+            		var self = $("#errorModal");
+            		self.modal('show');
+            		setTimeout(function(){
+            			self.modal('hide');
+            		}, 1500);
+            	}
+        	 });
+        	  $('#zakaz-btn').on('click', function (event) {
+        	 	var text1=$("#zakazname").val();
+            	var text2=$("#zakaznumber").val();
+            	var errors=0;
+            	if (text1==""){
+            		$("#zakazname").css({"border":"1px solid red"});
+            		errors++;
+            	}
+            	if (text2==""){
+            		$("#zakaznumber").css({"border":"1px solid red"});
+            		errors++;
+            	}
+
+            	if(errors==0){
+
+            	var self = $("#orderModal");
+            	var basicModal = $('#zakaz');
+            	self.modal('show');
+            	basicModal.modal('hide');
+            	setTimeout(function(){
+            		self.modal('hide');
+            	}, 3000);
+            	$("#zakazname").val("");
+            	$("#zakaznumber").val("");
+            	$("#zakazname").css({"border":""});
+            	$("#zakaznumber").css({"border":""});
+            }
+            	else {
+            		var self = $("#errorModal");
+            		self.modal('show');
+            		setTimeout(function(){
+            			self.modal('hide');
+            		}, 1500);
+            	}
+        	 });
+
+        	function RemoveBorder(){
+        		event.srcElement.style.border="1px solid #58cbb1";
+        	}
+        	document.getElementById("name").oninput=RemoveBorder;
+        	document.getElementById("problem").oninput=RemoveBorder;
+        	document.getElementById("comment").oninput=RemoveBorder;
+        	document.getElementById("ordername").oninput=RemoveBorder;
+        	document.getElementById("ordernumber").oninput=RemoveBorder;
+        	document.getElementById("findname").oninput=RemoveBorder;
+        	document.getElementById("findnumber").oninput=RemoveBorder;
+			document.getElementById("zakazname").oninput=RemoveBorder;
+        	document.getElementById("zakaznumber").oninput=RemoveBorder;
+	</script>
+		<!-- для велосити-->
+
+	<script src="js/bootstrap.min1.js"></script>
+	<script src='js/velocity.min.js'></script>
+	<script src='js/velocity.ui.min.js'></script>
+
+
+</body>
+</html>
